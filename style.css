@@ -30,6 +30,44 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.half-circle,
+.half-circle-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    transform-origin: right center;
+}
+
+.half-circle:nth-child(1) {
+    background-color: #b60000;
+}
+
+.half-circle:nth-child(2) {
+    background-color: #b60000;
+}
+
+.half-circle-top {
+    background-color: #fff;
+}
+
+.progressbar:hover .half-circle:nth-child(1) {
+    transform: rotate(180deg);
+    transition: transform 1s linear;
+}
+
+.progressbar:hover .half-circle:nth-child(2) {
+    transform: rotate(360deg);
+    transition: transform 2s linear;
+}
+
+.progressbar:hover .half-circle-top {
+    opacity: 0;
+    transition: opacity 0s 1s;
 }
 
 .progressbar-circle {
@@ -39,4 +77,5 @@ html {
     border-radius: 50%;
     color: #fff;
     font-size: 4rem;
+    display: none;
 }
